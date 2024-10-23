@@ -1,12 +1,19 @@
+// src/components/HootDetails/HootDetails.jsx te
+import CommentForm from "../CommentForm/CommentForm";
 import { useParams } from "react-router-dom";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import * as hootService from "../../services/hootService";
-// hi
-const HootDetails = (props) => {
-  const [hoot, setHoot] = useState(null);
-  const user = useContext(AuthedUserContext);
 
+// hi
+
+import { Link } from 'react-router-dom';
+
+
+const HootDetails = (props) => {
   const { hootId } = useParams();
+  console.log("hootId", hootId);
+
+  const [hoot, setHoot] = useState(null);
 
   useEffect(() => {
     const fetchHoot = async () => {
@@ -17,6 +24,11 @@ const HootDetails = (props) => {
     fetchHoot();
   }, [hootId]);
 
+  const handleAddComment = async (commentFormData) => {
+    const newComment = await hootService.createComment(hootId, commentFormData);
+    setHoot({ ...hoot, comments: [...hoot.comments, newComment] });
+  };
+///test 3
   // Verify that hoot state is being set correctly:
   console.log("hoot state:", hoot);
 
@@ -31,17 +43,11 @@ const HootDetails = (props) => {
           {hoot.author.username} posted on
           {new Date(hoot.createdAt).toLocaleDateString()}
         </p>
-        {hoot.author._id === user._id && (
-          <>
-            <button onClick={() => props.handleDeleteHoot(hootId)}>
-              Delete
-            </button>
-        </>
-      )}
       </header>
       <p>{hoot.text}</p>
       <section>
         <h2>Comments</h2>
+        <CommentForm handleAddComment={handleAddComment} />
 
         {!hoot.comments.length && <p>There are no comments.</p>}
 
