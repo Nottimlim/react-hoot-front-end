@@ -24,7 +24,7 @@ const HootDetails = (props) => {
     const newComment = await hootService.createComment(hootId, commentFormData);
     setHoot({ ...hoot, comments: [...hoot.comments, newComment] });
   };
-
+///JOOOO
   // Verify that hoot state is being set correctly:
   console.log("hoot state:", hoot);
 
