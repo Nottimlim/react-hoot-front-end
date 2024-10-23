@@ -59,7 +59,7 @@ const App = () => {
             <Route path="/" element={<Dashboard user={user} />} />
               <Route path="/hoots" element={<HootList hoots={hoots} />} />
               <Route path="/hoots/:hootId"
-                element={<HootDetails handleDeleteHoot={ } />} />
+                element={<HootDetails handleDeleteHoot={ user} />} />
               <Route path="/hoots/new"
                 element={<HootForm handleAddHoot={handleAddHoot} />}
               />
