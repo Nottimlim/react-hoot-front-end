@@ -16,7 +16,7 @@ const HootDetails = (props) => {
     };
     fetchHoot();
   }, [hootId]);
-
+///test 4
   // Verify that hoot state is being set correctly:
   console.log("hoot state:", hoot);
 
