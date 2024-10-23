@@ -16,10 +16,9 @@ import * as hootService from './services/hootService';
 export const AuthedUserContext = createContext(null);
 
 
-
 const App = () => {
   const [user, setUser] = useState(authService.getUser()); // using the method from authservice
-  const [hoots, seHoots] = useState([]);
+  const [hoots, setHoots] = useState([]);
   
   const navigate = useNavigate();
   
@@ -42,6 +41,13 @@ const App = () => {
     navigate('/hoots');
   };
 
+  const handleDeleteHoot = async (hootId) => {
+    const deleteHoot = await hootService.deleteHoot(hootId);
+    setHoots(hoots.filter((hoot) => hoot._id !== deleteHoot._id))
+    navigate('/hoots');
+  };
+
+
   return (
     <>
       <AuthedUserContext.Provider value={user}>
@@ -52,7 +58,8 @@ const App = () => {
             <>
             <Route path="/" element={<Dashboard user={user} />} />
               <Route path="/hoots" element={<HootList hoots={hoots} />} />
-              <Route path="/hoots/:hootId" element={<HootDetails />} />
+              <Route path="/hoots/:hootId"
+                element={<HootDetails handleDeleteHoot={ } />} />
               <Route path="/hoots/new"
                 element={<HootForm handleAddHoot={handleAddHoot} />}
               />
