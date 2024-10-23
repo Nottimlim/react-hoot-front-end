@@ -1,4 +1,5 @@
-// src/components/HootDetails/HootDetails.jsx
+// src/components/HootDetails/HootDetails.jsx te
+st
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import * as hootService from "../../services/hootService";
