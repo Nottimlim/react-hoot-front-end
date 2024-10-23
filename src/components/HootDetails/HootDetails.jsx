@@ -3,7 +3,11 @@ import CommentForm from "../CommentForm/CommentForm";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import * as hootService from "../../services/hootService";
+
+// hi
+
 import { Link } from 'react-router-dom';
+
 
 const HootDetails = (props) => {
   const { hootId } = useParams();
