@@ -24,11 +24,12 @@ const HootDetails = (props) => {
     fetchHoot();
   }, [hootId]);
 
-  const handleAddComment = async (commentFormData) => {
-    const newComment = await hootService.createComment(hootId, commentFormData);
-    setHoot({ ...hoot, comments: [...hoot.comments, newComment] });
-  };
+///test 5
+
+
+
 ///test 3
+main
   // Verify that hoot state is being set correctly:
   console.log("hoot state:", hoot);
 
@@ -66,5 +67,12 @@ const HootDetails = (props) => {
     </main>
   );
 };
+
+
+const handleAddComment = async (commentFormData) => {
+  const newComment = await hootService.createComment(hootId, commentFormData);
+  setHoot({ ...hoot, comments: [...hoot.comments, newComment] });
+};
+
 
 export default HootDetails;
