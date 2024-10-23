@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import * as hootService from "../../services/hootService";
-
+// hi
 const HootDetails = (props) => {
   const [hoot, setHoot] = useState(null);
   const user = useContext(AuthedUserContext);
