@@ -1,9 +1,8 @@
-const BASE_URL = `${import.meta.env.VITE_EXPRESS_BACKEND_URL}/hoots`;
+// src/services/hootService.js
 
-
-const index = async () => {
+const show = async (hootId) => {
   try {
-    const res = await fetch(BASE_URL, {
+    const res = await fetch(`${BASE_URL}/${hootId}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     });
     return res.json();
@@ -12,12 +11,8 @@ const index = async () => {
   }
 };
 
-// const show = async () => {
-//   try {
-    
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
-
-export { index };
+export {
+  index,
+  // Don't forget to export:
+  show,
+};
