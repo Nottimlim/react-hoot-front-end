@@ -29,6 +29,10 @@ main {
   margin-top: 4rem;
 }
 
+button {
+  margin: 1rem;
+}
+
 /* text coloring for all files */
 span {
   color: rgb(112, 0, 69);

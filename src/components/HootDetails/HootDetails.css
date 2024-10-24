@@ -1,3 +1,17 @@
 #hootdetails-main {
     background-color: rgb(120, 120, 120);
 }
+
+.comment-card {
+    background-color: rgb(199, 199, 199);
+    color: black;
+    padding: .2rem 0;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.comment-header {
+    text-align: left;
+    margin-left: 1rem;
+    font-style: italic;
+}
