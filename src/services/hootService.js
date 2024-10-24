@@ -47,7 +47,7 @@ const create = async (hootFormData) => {
 // update hoot (PUT method /hoots/:hootId)
 const update = async (hootId, hootFormData) => {
   try {
-    const res = await fetch(`${BASE_URL}/${hootId}`, {
+    const res = await fetch(`${BASE_URL}/hoots/${hootId}`, {
       method: 'PUT',
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
