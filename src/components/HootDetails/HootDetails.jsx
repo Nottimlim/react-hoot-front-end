@@ -14,7 +14,7 @@ const HootDetails = (props) => {
   useEffect(() => {
     const fetchHoot = async () => {
       const hootData = await hootService.show(hootId);
-      setHoot(hootData.hoot); // object within object issue
+      setHoot(hootData); // removed object within an object
     };
     fetchHoot();
   }, [hootId]);
