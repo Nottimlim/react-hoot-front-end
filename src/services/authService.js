@@ -79,4 +79,6 @@ const signout = () => {
 
 };
 
+/* --------------------------------Exports--------------------------------*/
+
 export { signup, signin, getUser, signout };
