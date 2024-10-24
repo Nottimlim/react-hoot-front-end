@@ -47,7 +47,7 @@ const HootDetails = (props) => {
           </div>
         )}
       <section>
-        <h2>Comments</h2>
+        <h2 id="comments-title">Comments</h2>
         <CommentForm handleAddComment={handleAddComment} />
 
         {!hoot.comments.length && <p>There are no comments.</p>}
