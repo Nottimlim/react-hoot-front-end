@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
-
 const HootList = ({ hoots }) => {
+  
   if (!Array.isArray(hoots) || hoots.length === 0) {
     return <p>No hoots available.</p>;
   }
@@ -13,6 +13,7 @@ const HootList = ({ hoots }) => {
           <article>
             <header>
               <h2>{hoot.title}</h2>
+              <p>Category: {hoot.category}</p>
               <p>
                 {hoot.author.username} posted on{' '}
                 {new Date(hoot.createdAt).toLocaleDateString()}

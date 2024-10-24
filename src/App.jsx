@@ -24,11 +24,11 @@ const App = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const feachAllHoots = async () => {
+    const fetchAllHoots = async () => {
       const hootsData = await hootService.index();
-      setHoots(hootsData);
+      setHoots([...hootsData.hoots]); // TODO: fix to a callback
     };
-    if (user) feachAllHoots();
+    if (user) fetchAllHoots();
   }, [user]);
 
   const handleSignout = () => {
