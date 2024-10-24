@@ -7,7 +7,7 @@ import SignupForm from "./components/SignupForm/SignupForm";
 import SigninForm from "./components/SigninForm/SigninForm";
 import HootList from "./components/HootList/HootList";
 import HootDetails from "./components/HootDetails/HootDetails";
-import HootForm from "./components/HootForm/HootForm";
+import HootForm from "./components/HootForm/HootForm.jsx";
 
 import * as authService from "../src/services/authService"; // import the authservice
 import * as hootService from "./services/hootService";
@@ -72,7 +72,7 @@ const App = () => {
                 path="/hoots/new"
                 element={<HootForm handleAddHoot={handleAddHoot} />}
               />
-              <Route path="/hoots/:hootId/edit" element={<HootForm />} />
+              <Route path="/hoots/:hootId/edit" element={<HootForm handleUpdateHoot={handleUpdateHoot} />} />
             </>
           ) : (
             // Public Routes :
@@ -80,10 +80,6 @@ const App = () => {
           )}
           <Route path="/signup" element={<SignupForm setUser={setUser} />} />
           <Route path="/signin" element={<SigninForm setUser={setUser} />} />
-          <Route
-            path="/hoots/:hootId/edit"
-            element={<HootForm handleUpdateHoot={handleUpdateHoot} />}
-          />
         </Routes>
       </AuthedUserContext.Provider>
     </>
