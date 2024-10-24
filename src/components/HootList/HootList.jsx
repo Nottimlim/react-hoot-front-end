@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import './HootList.css'
 
 const HootList = ({ hoots }) => {
   
@@ -7,21 +8,22 @@ const HootList = ({ hoots }) => {
   }
 
   return (
-    <main>
+    <main id="hootlist-main">
       {hoots.map((hoot) => (
-        <Link key={hoot._id} to={`/hoots/${hoot._id}`}>
-          <article>
-            <header>
-              <h2>{hoot.title}</h2>
-              <p>Category: {hoot.category}</p>
-              <p>
-                {hoot.author.username} posted on{' '}
-                {new Date(hoot.createdAt).toLocaleDateString()}
-              </p>
+        <div className="hoot-card">
+          <Link key={hoot._id} to={`/hoots/${hoot._id}`} className="hoot-card-link">
+            <header className="hoot-card-header">
+              <div className="hoot-card-head">
+                <h2 className="hoot-card-title">{hoot.title}</h2>
+                <p><span className="hoot-card-cat">{hoot.category}</span></p>
+              </div>
             </header>
-            <p>{hoot.text}</p>
-          </article>
-        </Link>
+            <p className="hoot-card-text">{hoot.text}</p>
+            <p>
+                {hoot.author.username} <span>posted on</span> {new Date(hoot.createdAt).toLocaleDateString()}
+            </p>
+          </Link>
+        </div>
       ))}
     </main>
   );

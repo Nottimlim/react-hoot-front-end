@@ -2,8 +2,10 @@ nav {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #1f1d1d;
     border-radius: 1rem;
+    height: 7%;
 }
 
 .nav-list {
