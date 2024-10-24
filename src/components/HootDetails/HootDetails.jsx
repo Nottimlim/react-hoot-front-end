@@ -6,6 +6,7 @@ import * as hootService from "../../services/hootService.js";
 
 
 const HootDetails = (props) => {
+  
   const [hoot, setHoot] = useState(null);
   const user = useContext(AuthedUserContext);
   
@@ -17,11 +18,11 @@ const HootDetails = (props) => {
       setHoot(hootData); // removed object within an object
     };
     fetchHoot();
-  }, [hootId]);
+  }, [hootId, hoot]);
 
   const handleAddComment = async (commentFormData) => {
     const newComment = await hootService.createComment(hootId, commentFormData);
-    setHoot({ ...hoot, comments: [...hoot.comments, newComment] });
+    setHoot(prev => ({ ...prev, comments: [...prev.comments, newComment] }));
   };
 
   if (!hoot) return <main>Loading...</main>;
@@ -48,18 +49,20 @@ const HootDetails = (props) => {
       <section>
         <h2>Comments</h2>
         <CommentForm handleAddComment={handleAddComment} />
+
         {!hoot.comments.length && <p>There are no comments.</p>}
-        {hoot.comments.map((comment) => (
-          <article key={comment._id}>
+
+        {hoot.comments.map((comment) => {
+          return <article key={comment._id}>
             <header>
               <p>
-                {comment.author.username} posted on
-                {new Date(comment.createdAt).toLocaleDateString()}
+                {comment.author.username} posted on {new Date(comment.createdAt).toLocaleDateString()}
               </p>
             </header>
             <p>{comment.text}</p>
           </article>
-        ))}
+        })}
+
       </section>
     </main>
   );
