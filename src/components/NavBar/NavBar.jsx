@@ -7,12 +7,14 @@ const NavBar = ({ handleSignout }) => {
   return (
     <>
       {user ? (
-        <ul>
-          <li><link to="/" />HOME</li>
-          <li><link to="/hoots" />HOOTS</li>
-          <li><link to="/hoots/new" />NEW HOOTS</li>
-          <li><Link to='' onClick={handleSignout}>SIGN OUT</Link></li>
-        </ul>
+        <nav>
+          <ul>
+            <li><Link to="/">HOME</Link></li>
+            <li><Link to="/hoots">HOOTS</Link></li>
+            <li><Link to="/hoots/new">NEW HOOTS</Link></li>
+            <li><Link to="" onClick={handleSignout}>SIGN OUT</Link></li>
+          </ul>
+        </nav>
       ) : (
         <nav>
           <ul>
@@ -28,4 +30,5 @@ const NavBar = ({ handleSignout }) => {
     </>
   );
 };
+
 export default NavBar;
