@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import * as hootService from "../../services/hootService";
+import './CommentForm.css'
 
 const CommentForm = (props) => {
   const [formData, setFormData] = useState({ text: "" });
@@ -17,17 +18,17 @@ const CommentForm = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="text-input">Your comment:</label>
-      <textarea
-        required
-        type="text"
-        name="text"
-        id="text-input"
-        value={formData.text}
-        onChange={handleChange}
-      />
-      <button type="submit">SUBMIT COMMENT</button>
+    <form onSubmit={handleSubmit} className="comment-form-header">
+        <label htmlFor="text-input">Your comment:</label>
+        <textarea
+          required
+          type="text"
+          name="text"
+          id="text-input"
+          value={formData.text}
+          onChange={handleChange}
+        />
+        <button type="submit">Post Comment</button>
     </form>
   );
 };

@@ -1,0 +1,53 @@
+/* #hootlist-main {
+    max-height: 100vh; how to change the main property and adjust height
+    padding-bottom: 2rem;
+} */
+
+.hoot-card {
+    background-color: rgb(199, 199, 199);
+    width: 90%;
+    margin: 1rem 0;
+    border-radius: 1rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hoot-card-header, .hoot-card-link {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hoot-card-head {
+    padding-top: .5rem;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.hoot-card-title {
+    width: 40%;
+}
+
+.hoot-card-cat {
+    font-style: italic;
+}
+
+.hoot-card-text {
+    width: 90%;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background-color: rgb(185, 185, 185);
+    padding: .1rem;
+    border-radius: .5rem;
+}

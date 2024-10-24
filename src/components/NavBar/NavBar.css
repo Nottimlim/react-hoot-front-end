@@ -1,0 +1,22 @@
+nav {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f1d1d;
+    border-radius: 1rem;
+    height: 7%;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    left: 1rem;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-evenly;
+    list-style-type: none;
+    font-size: 1.3rem;
+}
