@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import * as hootService from "../../services/hootService";
 
 const HootForm = (props) => {
+
+  console.log(props);
+  
   const { hootId } = useParams();
   const [formData, setFormData] = useState({
     title: "",
