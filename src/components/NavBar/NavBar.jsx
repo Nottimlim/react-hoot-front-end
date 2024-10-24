@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { AuthedUserContext } from '../../App';
 import { useContext } from 'react';
+import './NavBar.css'
 
 const NavBar = ({ handleSignout }) => {
   const user = useContext(AuthedUserContext);
@@ -8,16 +9,16 @@ const NavBar = ({ handleSignout }) => {
     <>
       {user ? (
         <nav>
-          <ul>
-            <li><Link to="/">HOME</Link></li>
-            <li><Link to="/hoots">HOOTS</Link></li>
-            <li><Link to="/hoots/new">NEW HOOTS</Link></li>
-            <li><Link to="" onClick={handleSignout}>SIGN OUT</Link></li>
+          <ul className="nav-list">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/hoots">Hoots</Link></li>
+            <li><Link to="/hoots/new">New Hoot</Link></li>
+            <li><Link to="" onClick={handleSignout}>Sign Out</Link></li>
           </ul>
         </nav>
       ) : (
         <nav>
-          <ul>
+          <ul className="nav-list">
             <li>
               <Link to="/signin">Sign In</Link>
             </li>
