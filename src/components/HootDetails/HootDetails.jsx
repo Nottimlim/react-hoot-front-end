@@ -14,7 +14,7 @@ const HootDetails = (props) => {
   useEffect(() => {
     const fetchHoot = async () => {
       const hootData = await hootService.show(hootId);
-      setHoot(hootData);
+      setHoot(hootData.hoot); // object within object issue
     };
     fetchHoot();
   }, [hootId]);
