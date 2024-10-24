@@ -14,12 +14,11 @@ body {
   padding: 2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 
 main {
-  height: 50%;
+  height: auto;
   width: 90%;
   text-align: center;
   display: flex;
@@ -27,7 +26,7 @@ main {
   align-items: center;
   padding: 1rem;
   border-radius: 1rem;
-  margin-top: 1rem;
+  margin-top: 4rem;
 }
 
 /* text coloring for all files */

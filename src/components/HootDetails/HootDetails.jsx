@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import {AuthedUserContext} from "../../App.jsx"
 import CommentForm from "../CommentForm/CommentForm.jsx";
 import * as hootService from "../../services/hootService.js";
+import './HootDetails.css';
 
 
 const HootDetails = (props) => {
@@ -28,13 +29,12 @@ const HootDetails = (props) => {
   if (!hoot) return <main>Loading...</main>;
 
   return (
-    <main>
+    <main id="hootdetails-main">
       <header>
         <p>{hoot.category.toUpperCase()}</p>
         <h1>{hoot.title}</h1>
         <p>
-          {hoot.author.username} posted on {" "}
-          {new Date(hoot.createdAt).toLocaleDateString()}
+          {hoot.author.username} <span>posted on</span> {new Date(hoot.createdAt).toLocaleDateString()}
         </p>
         {hoot.author._id === user._id && (
           <>

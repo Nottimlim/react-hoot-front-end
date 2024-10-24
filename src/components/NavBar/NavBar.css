@@ -6,6 +6,10 @@ nav {
     background-color: #1f1d1d;
     border-radius: 1rem;
     height: 7%;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    left: 1rem;
 }
 
 .nav-list {
