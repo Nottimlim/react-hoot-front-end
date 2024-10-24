@@ -25,8 +25,8 @@ const App = () => {
 
   useEffect(() => {
     const fetchAllHoots = async () => {
-      const hootsData = await hootService.index();
-      setHoots([...hootsData.hoots]); // TODO: fix to a callback
+      const hootsData = await hootService.index(); // remove json
+      setHoots([...hootsData]);
     };
     if (user) fetchAllHoots();
   }, [user]);
@@ -44,7 +44,7 @@ const App = () => {
 
   const handleDeleteHoot = async (hootId) => {
     const deleteHoot = await hootService.deleteHoot(hootId);
-    setHoots(hoots.filter((hoot) => hoot._id !== deleteHoot._id));
+    setHoots(prevHoots => (prevHoots.filter((hoot) => hoot._id !== deleteHoot._id)));
     navigate("/hoots");
   };
 
