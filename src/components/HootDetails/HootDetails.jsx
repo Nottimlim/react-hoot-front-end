@@ -1,4 +1,4 @@
-import { useParams, link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import {AuthedUserContext} from "../../App.jsx"
 import CommentForm from "../CommentForm/CommentForm.jsx";
@@ -37,7 +37,7 @@ const HootDetails = (props) => {
         </p>
         {hoot.author._id === user._id && (
           <>
-            <link to={`/hoots/${hootId}/edit`}>Edit</link>
+            <Link to={`/hoots/${hootId}/edit`}>Edit</Link>
             <button onClick={() => props.handleDeleteHoot(hootId)}>
               Delete
             </button>
